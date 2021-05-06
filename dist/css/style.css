@@ -43,4 +43,14 @@ input[type="submit"] {
     border: 1px solid #e41b89;
     cursor: pointer; }
 
+@media (max-width: 700px) {
+  #subscription {
+    width: 55%; } }
+@media (max-width: 500px) {
+  #subscription {
+    width: 65%; } }
+@media (max-width: 350px) {
+  #subscription {
+    width: 85%; } }
+
 /*# sourceMappingURL=style.css.map */
