@@ -1,5 +1,46 @@
 body {
   font: 100% Helvetica, sans-serif;
-  color: #333; }
+  color: #333;
+  background-color: #333; }
+
+header {
+  text-align: center;
+  color: #fff; }
+
+#subscription {
+  width: 35%;
+  margin: 5vh auto;
+  padding: 1vh 3vw 5vh 3vw;
+  background-color: #fff;
+  border-radius: .3em;
+  box-shadow: 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.4); }
+
+form {
+  display: flex;
+  flex-direction: column; }
+
+label, input[type="submit"] {
+  margin-top: 1.5em; }
+
+input {
+  padding: 0.5em;
+  margin-top: 0.5em;
+  border-radius: .3em;
+  border: 1px solid #333; }
+
+input[type="submit"] {
+  background-color: #e41b89;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: larger;
+  font-weight: bold;
+  letter-spacing: .05em;
+  transition: all 500ms; }
+  input[type="submit"]:hover {
+    background-color: #fff;
+    color: #e41b89;
+    border: 1px solid #e41b89;
+    cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

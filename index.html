@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS and font -->
+    <link rel="stylesheet" href="./dist/css/style.css">
     <!-- Script -->
     <script src="https://unpkg.com/lodash@4.17.20"></script>
     <script defer src="./dist/bundle.js"></script>
     <title>Inscription</title>
 </head>
 <body>
-    <!-- https://sass-lang.com/install -->
+    <header>
+        <h1>Inscription</h1>
+    </header>
+    <section id="subscription">
+        <h2>Inscrivez-vous</h2>
+        <form action="">
+            <label for="user">Nom d'utilisateur</label>
+            <input type="text" name="user" id="user">
+            
+            <label for="email">Entrez votre adresse e-mail</label>
+            <input type="email" name="email" id="email">
+            
+            <label for="password">Créez votre mot de passe</label>
+            <input type="password" name="password" id="password">
+            
+            <label for="password">Confirmez votre mot de passe</label>
+            <input type="password" name="password" id="password">
+            
+            <input type="submit" value="Connexion">
+        </form>
+    </section>
+    
     
 </body>
 </html>
