@@ -18,17 +18,26 @@
     <section id="subscription">
         <h2>Inscrivez-vous</h2>
         <form action="">
-            <label for="user">Nom d'utilisateur</label>
-            <input type="text" name="user" id="user">
             
-            <label for="email">Entrez votre adresse e-mail</label>
-            <input type="email" name="email" id="email">
+            <fieldset id="userField">
+                <label for="user">Nom d'utilisateur</label>
+                <input type="text" name="user" id="user">
+            </fieldset>
             
-            <label for="password">Créez votre mot de passe</label>
-            <input type="password" name="password" id="password">
+            <fieldset>
+                <label for="email">Entrez votre adresse e-mail</label>
+                <input type="email" name="email" id="email">
+            </fieldset>
             
-            <label for="confirm-password">Confirmez votre mot de passe</label>
-            <input type="password" name="password" id="confirm-password">
+            <fieldset>
+                <label for="password">Créez votre mot de passe</label>
+                <input type="password" name="password" id="password">
+            </fieldset>
+            
+            <fieldset>
+                <label for="confirm-password">Confirmez votre mot de passe</label>
+                <input type="password" name="password" id="confirm-password">
+            </fieldset>
             
             <input type="submit" value="Connexion">
         </form>

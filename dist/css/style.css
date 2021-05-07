@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
 body {
   font: 100% Helvetica, sans-serif;
   color: #333;
@@ -24,14 +29,27 @@ form {
   display: flex;
   flex-direction: column; }
 
+fieldset {
+  border: none; }
+
 label, input[type="submit"] {
   margin-top: 1.5em; }
 
 input {
+  width: 100%;
   padding: 0.5em;
   margin-top: 0.5em;
   border-radius: .3em;
   border: 1px solid #333; }
+
+.info {
+  margin: 1.2em 0; }
+
+.infoRight {
+  color: #7CA208; }
+
+.infoWrong {
+  color: #DA0864; }
 
 input[type="submit"] {
   background-color: #e41b89;

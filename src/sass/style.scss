@@ -1,5 +1,11 @@
 @import './variables';
 
+*, ::before, ::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
   font: 100% $font-stack;
   color: $grey-primary-color;
@@ -32,15 +38,32 @@ form{
     flex-direction: column;
 }
 
+fieldset{
+    border: none;
+}
+
 label, input[type="submit"]{
     margin-top: 1.5em;
 }
 
 input{
+    width: 100%;
     padding: 0.5em;
     margin-top: 0.5em;
     border-radius: .3em;
     border: 1px solid $grey-primary-color;
+}
+
+.info{
+    margin: 1.2em 0;
+}
+
+.infoRight{
+    color: $valid-info;
+}
+
+.infoWrong{
+    color: $not-valid-info;
 }
 
 input[type="submit"]{
