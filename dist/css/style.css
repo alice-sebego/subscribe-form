@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 body {
   font: 100% Helvetica, sans-serif;
   color: #333;
@@ -6,6 +7,10 @@ body {
 header {
   text-align: center;
   color: #fff; }
+
+header h1 {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.05em; }
 
 #subscription {
   width: 35%;
@@ -35,7 +40,7 @@ input[type="submit"] {
   text-transform: uppercase;
   font-size: larger;
   font-weight: bold;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   transition: all 500ms; }
   input[type="submit"]:hover {
     background-color: #fff;
