@@ -32,7 +32,7 @@ $user.addEventListener("change", (e) =>{
         $userField.appendChild($infoUser);
 
         if($user.value.length > 3 && 
-           $user.value.length < 15 && 
+           $user.value.length <= 15 && 
            regexUser.test($user.value) === true ){
             
             $infoUser.classList.add("infoRight");
