@@ -19,14 +19,25 @@ eval("/* module decorator */ module = __webpack_require__.nmd(module);\nvar __WE
 
 /***/ }),
 
-/***/ "./src/app.js":
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
+/***/ "./src/js/app.js":
+/*!***********************!*\
+  !*** ./src/js/app.js ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nlet $user = document.querySelector(\"#user\");\r\nlet $email = document.querySelector(\"#email\");\r\nlet $password = document.querySelector(\"#password\");\r\nlet $confirmPassword = document.querySelector(\"#confirm-password\");\r\n\r\nconst $userField = document.querySelector(\"#userField\");\r\n\r\n// Regex List\r\nconst regexUser = /^[a-zA-Z\\d\\S]{3,15}$/;\r\n\r\n$user.addEventListener(\"change\", (e) =>{\r\n\r\n    e.preventDefault();\r\n\r\n    if($user.value){\r\n\r\n        let $infoUser = document.createElement(\"p\");\r\n        $infoUser.setAttribute(\"id\", \"infoUser\");\r\n        $infoUser.classList.add(\"info\");\r\n        $userField.appendChild($infoUser);\r\n\r\n        if($user.value.length > 3 && $user.value.length < 15 && regexUser.test($user.value) === true ){\r\n            \r\n            $infoUser.classList.add(\"infoRight\");\r\n            $infoUser.innerHTML = `Votre pseudo <strong>${user.value}</strong> est valide`;\r\n            \r\n        } else {\r\n            $infoUser.classList.add(\"infoWrong\");\r\n            $infoUser.innerHTML = `Votre pseudo <strong>${user.value}</strong> doit contenir entre 3 et 15 caractères & ne pas contenir d'espace`;\r\n           \r\n        }\r\n    }\r\n})\r\n\r\n/* regex username || ^[a-zA-Z\\d\\S]{3,15}$ */\n\n//# sourceURL=webpack://subscribe-form/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/js/utils.js\");\n\r\n\r\n\r\n\r\n// Elements of DOM\r\nlet $user = document.querySelector(\"#user\");\r\nlet $email = document.querySelector(\"#email\");\r\nlet $password = document.querySelector(\"#password\");\r\nlet $confirmPassword = document.querySelector(\"#confirm-password\");\r\n\r\nconst $userField = document.querySelector(\"#userField\");\r\nconst $mailFiel = document.querySelector(\"#mailField\");\r\nconst $passwordField = document.querySelector(\"#passwordField\");\r\nconst $confirmPassWField = document.querySelector(\"#confirmPassWField\");\r\n\r\nconst $infoUser = document.querySelector(\"#infoUser\");\r\n\r\n// Regex List\r\nconst regexUser = /^[a-zA-Z\\d\\S]{3,15}$/;\r\n\r\n$user.addEventListener(\"change\", (e) =>{\r\n\r\n    e.preventDefault();\r\n    $infoUser.innerHTML = \"\";\r\n\r\n    if($user.value){\r\n\r\n        $infoUser.setAttribute(\"id\", \"infoUser\");\r\n        $infoUser.classList.add(\"info\");\r\n        $userField.appendChild($infoUser);\r\n\r\n        if($user.value.length > 3 && \r\n           $user.value.length < 15 && \r\n           regexUser.test($user.value) === true ){\r\n            \r\n            $infoUser.classList.add(\"infoRight\");\r\n            $infoUser.innerHTML = `Votre pseudo <strong>${user.value}</strong> est valide`;\r\n            _utils__WEBPACK_IMPORTED_MODULE_1__.removeElement($infoUser);\r\n\r\n        } else {\r\n            \r\n            $infoUser.classList.add(\"infoWrong\");\r\n            $infoUser.innerHTML = `Votre pseudo <strong>${user.value}</strong> doit contenir entre 3 et 15 caractères & ne pas contenir d'espace`;\r\n            _utils__WEBPACK_IMPORTED_MODULE_1__.removeElement($infoUser);\r\n        }\r\n    }\r\n\r\n});\r\n\n\n//# sourceURL=webpack://subscribe-form/./src/js/app.js?");
+
+/***/ }),
+
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"removeElement\": () => (/* binding */ removeElement)\n/* harmony export */ });\n/**\r\n * Remove an element of DOM\r\n * @param {HTMLParagraph} element \r\n */\r\nconst removeElement = (element) => {\r\n    setTimeout(() =>{\r\n        element.remove();\r\n    }, 5500);\r\n}\r\n\r\n\n\n//# sourceURL=webpack://subscribe-form/./src/js/utils.js?");
 
 /***/ })
 
@@ -126,7 +137,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var loda
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/app.js");
 /******/ 	
 /******/ })()
 ;
