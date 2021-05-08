@@ -1,4 +1,5 @@
 @import './variables';
+@import './placeholders';
 
 *, ::before, ::after{
     box-sizing: border-box;
@@ -25,6 +26,12 @@ header{
 }
 
 #subscription{
+        h2{
+            margin: 2vh 0;  
+        }
+}
+
+#subscription{
     width: 35%;
     margin: 5vh auto;
     padding: 1vh 3vw 5vh 3vw;
@@ -40,10 +47,11 @@ form{
 
 fieldset{
     border: none;
+    @extend %margin-top;
 }
 
-label, input[type="submit"]{
-    margin-top: 1.5em;
+input[type="submit"]{
+    @extend %margin-top;
 }
 
 input{

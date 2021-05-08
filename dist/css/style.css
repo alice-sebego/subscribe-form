@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+fieldset, input[type="submit"] {
+  margin-top: 1.8em; }
+
 *, ::before, ::after {
   box-sizing: border-box;
   padding: 0;
@@ -17,6 +20,9 @@ header h1 {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.05em; }
 
+#subscription h2 {
+  margin: 2vh 0; }
+
 #subscription {
   width: 35%;
   margin: 5vh auto;
@@ -31,9 +37,6 @@ form {
 
 fieldset {
   border: none; }
-
-label, input[type="submit"] {
-  margin-top: 1.5em; }
 
 input {
   width: 100%;

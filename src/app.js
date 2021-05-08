@@ -21,7 +21,9 @@ $user.addEventListener("change", (e) =>{
         $infoUser.classList.add("info");
         $userField.appendChild($infoUser);
 
-        if($user.value.length > 3 && $user.value.length < 15 && regexUser.test($user.value) === true ){
+        if($user.value.length > 3 && 
+            $user.value.length < 15 && 
+            regexUser.test($user.value) === true ){
             
             $infoUser.classList.add("infoRight");
             $infoUser.innerHTML = `Votre pseudo <strong>${user.value}</strong> est valide`;
