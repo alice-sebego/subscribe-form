@@ -11,7 +11,10 @@ let $confirmPassword = document.querySelector("#confirm-password");
 const $userField = document.querySelector("#userField");
 const $mailFiel = document.querySelector("#mailField");
 const $passwordField = document.querySelector("#passwordField");
+const $pwd = document.querySelector("#pwd");
+const $confirmPwd = document.querySelector("#confirmPwd");
 const $confirmPassWField = document.querySelector("#confirmPassWField");
+const $showPassword = document.querySelector("#showPassword");
 
 const $infoUser = document.querySelector("#infoUser");
 const $infoMail = document.querySelector("#infoMail");
@@ -110,3 +113,11 @@ $password.addEventListener("change", (e) =>{
     }
 
 });
+
+// Create a btn in order to display password input
+util.createBtnDisplayPassword($pwd);
+
+// $showPassword.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     util.displayPassword($password);
+// });

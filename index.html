@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS and font -->
     <link rel="stylesheet" href="./dist/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Script -->
     <script src="https://unpkg.com/lodash@4.17.20"></script>
     <script defer src="./dist/bundle.js"></script>
@@ -32,14 +33,14 @@
             </fieldset>
             
             <fieldset id="passwordField">
-                <label for="password">Créez votre mot de passe</label>
-                <input type="password" name="password" id="password" required>
+                <label for="password" id="pwd">Créez votre mot de passe<input type="password" name="password" id="password" required></label>
+                
                 <!-- <p id="infoPassword"></p> -->
             </fieldset>
             
             <fieldset id="confirmPassWField">
-                <label for="confirm-password">Confirmez votre mot de passe</label>
-                <input type="password" name="password" id="confirm-password" required>
+                <label for="confirm-password" id="confirmPwd">Confirmez votre mot de passe <input type="password" name="password" id="confirm-password" required></label>
+                
             </fieldset>
             
             <input type="submit" value="Connexion">
