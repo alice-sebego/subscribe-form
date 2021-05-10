@@ -15,6 +15,7 @@ const $confirmPassWField = document.querySelector("#confirmPassWField");
 
 const $infoUser = document.querySelector("#infoUser");
 const $infoMail = document.querySelector("#infoMail");
+//const $infoPassword = document.querySelector("#infoPassword");
 
 // Regex List
 const regexUser = /^[a-zA-Z\d\S]{3,15}$/;
@@ -74,6 +75,38 @@ $email.addEventListener("change", (e) =>{
 
         }
 
+    }
+
+});
+
+// Handle the first input of password's user
+
+$password.addEventListener("change", (e) =>{
+
+    e.preventDefault();
+    const $infoPassword = document.createElement("p");
+    $infoPassword.innerHTML = "";
+
+    if($password.value){
+
+        $infoPassword.classList.add("info");
+        $passwordField.appendChild($infoPassword);
+
+        if($password.value.length > 1 && $password.value.length < 7){
+            
+            $infoPassword.innerHTML = `Mot de passe faible`;
+            util.removeElement($infoPassword);
+
+        } else if($password.value.length > 6 && $password.value.length < 10){
+            
+            $infoPassword.innerHTML = `Mot de passe moyen`;
+            util.removeElement($infoPassword);
+
+        } else if($password.value.length > 9 ){
+            
+            $infoPassword.innerHTML = `Mot de passe fort`;
+            util.removeElement($infoPassword);
+        }
     }
 
 });
