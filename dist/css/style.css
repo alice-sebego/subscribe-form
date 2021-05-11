@@ -54,6 +54,14 @@ input {
 .infoWrong {
   color: #DA0864; }
 
+button {
+  padding: 0.3em;
+  margin-top: 0.1em;
+  color: #e41b89;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0.1em 0.1em 0.15em #333; }
+
 button > i {
   pointer-events: none; }
 

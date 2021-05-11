@@ -74,6 +74,15 @@ input{
     color: $not-valid-info;
 }
 
+button{
+    padding: 0.3em;
+    margin-top: 0.1em;
+    color: $pink-secondary-color;
+    background-color: $white-color;
+    border: 1px solid $white-color;
+    box-shadow: .1em .1em .15em $grey-primary-color;
+}
+
 button > i{
     pointer-events: none;
 }
