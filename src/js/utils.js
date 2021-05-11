@@ -9,23 +9,11 @@ const removeElement = (element) => {
 }
 
 /**
- * Create a button on labels which handle password input
- * @param {HTMLButtonElement} element 
- */
-const createBtnDisplayPassword = (element) => {
-    const $btnEye = document.createElement("button");
-    $btnEye.setAttribute("type", "button");
-    $btnEye.setAttribute("id", "showPassword");
-    $btnEye.innerHTML = `<i class="fas fa-eye"></i>`;
-    element.appendChild($btnEye);
-}
-
-/**
  * Display password on the user's input
  * @param {HTMLInputElement} input 
  */
-const displayPassword = (input) => {
-    input.type === "password" ? input.type = "text": input.type = "password";
+const displayPassword = (inputPassword) => {
+    inputPassword.type === "password" ? inputPassword.type = "text": inputPassword.type = "password";
 }
 
-export {removeElement, createBtnDisplayPassword, displayPassword};
+export {removeElement, displayPassword};

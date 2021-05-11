@@ -74,6 +74,10 @@ input{
     color: $not-valid-info;
 }
 
+button > i{
+    pointer-events: none;
+}
+
 input[type="submit"]{
 
     background-color: $pink-secondary-color;

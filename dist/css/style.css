@@ -54,6 +54,9 @@ input {
 .infoWrong {
   color: #DA0864; }
 
+button > i {
+  pointer-events: none; }
+
 input[type="submit"] {
   background-color: #e41b89;
   border: none;

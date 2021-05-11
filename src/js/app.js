@@ -6,15 +6,16 @@ import * as util from './utils';
 let $user = document.querySelector("#user");
 let $email = document.querySelector("#email");
 let $password = document.querySelector("#password");
-let $confirmPassword = document.querySelector("#confirm-password");
+let $confirmPassword = document.querySelector("#confirmPassword");
 
 const $userField = document.querySelector("#userField");
 const $mailFiel = document.querySelector("#mailField");
 const $passwordField = document.querySelector("#passwordField");
-const $pwd = document.querySelector("#pwd");
-const $confirmPwd = document.querySelector("#confirmPwd");
 const $confirmPassWField = document.querySelector("#confirmPassWField");
+ 
 const $showPassword = document.querySelector("#showPassword");
+const $showConfirmPassword = document.querySelector("#showConfirmPassword");
+
 
 const $infoUser = document.querySelector("#infoUser");
 const $infoMail = document.querySelector("#infoMail");
@@ -114,10 +115,11 @@ $password.addEventListener("change", (e) =>{
 
 });
 
-// Create a btn in order to display password input
-util.createBtnDisplayPassword($pwd);
+// Handle all btn in order to display password input
+$showPassword.addEventListener("click", () => {   
+    util.displayPassword($password);
+});
 
-// $showPassword.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     util.displayPassword($password);
-// });
+$showConfirmPassword.addEventListener("click", ()=>{
+    util.displayPassword($confirmPassword);
+});
