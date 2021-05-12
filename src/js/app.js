@@ -84,7 +84,6 @@ $email.addEventListener("change", (e) =>{
 });
 
 // Handle the first input of password's user
-
 $password.addEventListener("change", (e) =>{
 
     e.preventDefault();
@@ -122,4 +121,30 @@ $showPassword.addEventListener("click", () => {
 
 $showConfirmPassword.addEventListener("click", ()=>{
     util.displayPassword($confirmPassword);
+});
+
+// https://www.gary-deshayes.com/fr/article/3-javascript-jquery-et-regex-securiser-un-mot-de-passe-en-temps-reel
+
+$confirmPassword.addEventListener("click", (e) =>{
+    
+    e.preventDefault();
+    const $infoPasswordField = document.createElement("p");
+    $infoPasswordField.classList.add("info");
+    $infoPasswordField.innerHTML = "";
+
+    if($confirmPassword.value === $password.value){
+
+        
+        $infoPasswordField.classList.add("infoRight");
+        $infoPasswordField.innerHTML = "Mot de passe confirmé";
+        $confirmPassWField.appendChild($infoPasswordField);
+        util.removeElement($infoPasswordField);
+
+    } else {
+        $infoPasswordField.classList.add("infoWrong");
+        $infoPasswordField.innerHTML = "Mot de passe non identique";
+        $confirmPassWField.appendChild($infoPasswordField);
+        util.removeElement($infoPasswordField);
+    }
+
 });
