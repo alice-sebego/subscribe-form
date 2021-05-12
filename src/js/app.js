@@ -137,14 +137,14 @@ $confirmPassword.addEventListener("click", (e) =>{
         
         $infoPasswordField.classList.add("infoRight");
         $infoPasswordField.innerHTML = "Mot de passe confirmé";
-        $confirmPassWField.appendChild($infoPasswordField);
-        util.removeElement($infoPasswordField);
 
     } else {
         $infoPasswordField.classList.add("infoWrong");
         $infoPasswordField.innerHTML = "Mot de passe non identique";
-        $confirmPassWField.appendChild($infoPasswordField);
-        util.removeElement($infoPasswordField);
+        
     }
+
+    $confirmPassWField.appendChild($infoPasswordField);
+    util.removeElement($infoPasswordField);
 
 });
