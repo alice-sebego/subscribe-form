@@ -19,14 +19,13 @@ const $showConfirmPassword = document.querySelector("#showConfirmPassword");
 
 const $infoUser = document.querySelector("#infoUser");
 const $infoMail = document.querySelector("#infoMail");
-//const $infoPassword = document.querySelector("#infoPassword");
 
 // Regex List
 const regexUser = /^[a-zA-Z\d\S]{3,15}$/;
 const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
 // Handle Username
-$user.addEventListener("change", (e) =>{
+$user.addEventListener("change", e => {
 
     e.preventDefault();
     $infoUser.innerHTML = "";
@@ -55,7 +54,7 @@ $user.addEventListener("change", (e) =>{
 });
 
 // Handle user's email
-$email.addEventListener("change", (e) =>{
+$email.addEventListener("change", e => {
 
     e.preventDefault();
     $infoMail.innerHTML = "";
@@ -84,7 +83,7 @@ $email.addEventListener("change", (e) =>{
 });
 
 // Handle the first input of password's user
-$password.addEventListener("change", (e) =>{
+$password.addEventListener("change", e => {
 
     e.preventDefault();
     const $infoPassword = document.createElement("p");
@@ -114,31 +113,22 @@ $password.addEventListener("change", (e) =>{
 
 });
 
-// Handle all btn in order to display password input
-$showPassword.addEventListener("click", () => {   
-    util.displayPassword($password);
-});
-
-$showConfirmPassword.addEventListener("click", ()=>{
-    util.displayPassword($confirmPassword);
-});
-
-// https://www.gary-deshayes.com/fr/article/3-javascript-jquery-et-regex-securiser-un-mot-de-passe-en-temps-reel
-
-$confirmPassword.addEventListener("click", (e) =>{
+// Handle user's confirmation of his password input
+$confirmPassword.addEventListener("click", e => {
     
     e.preventDefault();
+
     const $infoPasswordField = document.createElement("p");
     $infoPasswordField.classList.add("info");
     $infoPasswordField.innerHTML = "";
 
     if($confirmPassword.value === $password.value){
 
-        
         $infoPasswordField.classList.add("infoRight");
         $infoPasswordField.innerHTML = "Mot de passe confirmé";
 
     } else {
+
         $infoPasswordField.classList.add("infoWrong");
         $infoPasswordField.innerHTML = "Mot de passe non identique";
         
@@ -147,4 +137,13 @@ $confirmPassword.addEventListener("click", (e) =>{
     $confirmPassWField.appendChild($infoPasswordField);
     util.removeElement($infoPasswordField);
 
+});
+
+// Handle all btn in order to display password input
+$showPassword.addEventListener("click", () => {   
+    util.displayPassword($password);
+});
+
+$showConfirmPassword.addEventListener("click", () => {
+    util.displayPassword($confirmPassword);
 });

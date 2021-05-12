@@ -5,7 +5,7 @@
 const removeElement = (element) => {
     setTimeout(() =>{
         element.remove();
-    }, 5500);
+    }, 6000);
 }
 
 /**
