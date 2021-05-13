@@ -12,9 +12,13 @@ Idem with Webpack 5
 * HTML5, SASS, JavaScript
 * Webpack 5
 
+Handle SASS file : `sass --watch src/sass/style.scss:dist/css/style.css`
+
 ## DevDependencies : 
 Install all devDependencies : `npm install`
 
 Compile files JS : `npm run build`
+
+Watch all change on JS files : `npm run watch`
 
 Run this project on the local server : `npm run start`
