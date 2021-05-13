@@ -19,10 +19,12 @@ const $showConfirmPassword = document.querySelector("#showConfirmPassword");
 
 const $infoUser = document.querySelector("#infoUser");
 const $infoMail = document.querySelector("#infoMail");
+const $checkPassword = document.querySelector("#check-password");
 const $passwordLength = document.querySelector("#password-length");
 const $passwordLowcase = document.querySelector("#password-lowcase");
 const $passwordUppercase = document.querySelector("#password-uppercase");
 const $passwordDigit = document.querySelector("#password-digit");
+const $infoConfirmPassword = document.querySelector("#infoConfirm-password");
 
 // Handle Username
 $user.addEventListener("change", e => {
@@ -86,6 +88,7 @@ $email.addEventListener("change", e => {
 $password.addEventListener("keyup", e => {
 
     e.preventDefault();
+    $checkPassword.classList.add("info");
 
     if($password.value){
 
@@ -117,26 +120,12 @@ $password.addEventListener("keyup", e => {
 $confirmPassword.addEventListener("keyup", e => {
     
     e.preventDefault();
-
-    const $infoPasswordField = document.createElement("p");
-    $infoPasswordField.classList.add("info");
-    $infoPasswordField.innerHTML = "";
-
-    if($confirmPassword.value === $password.value){
-
-        $infoPasswordField.classList.add("infoRight");
-        $infoPasswordField.innerHTML = "Mot de passe confirmé";
-
-    } else {
-
-        $infoPasswordField.classList.add("infoWrong");
-        $infoPasswordField.innerHTML = "Mot de passe non identique";
+    $infoConfirmPassword.classList.add("info");
+    
+    $confirmPassword.value === $password.value ?
+    $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Mot de passe confirmé`:
+    $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Mot de passe non identique`;
         
-    }
-
-    $confirmPassWField.appendChild($infoPasswordField);
-    util.removeElement($infoPasswordField);
-
 });
 
 // Handle all btn in order to display password input
