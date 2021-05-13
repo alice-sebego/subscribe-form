@@ -112,6 +112,13 @@ $password.addEventListener("keyup", e => {
         $passwordDigit.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 1 chiffre.`:
         $passwordDigit.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 1 chiffre.`;
 
+    } else {
+
+        $passwordLength.innerHTML = "";
+        $passwordLowcase.innerHTML = "";
+        $passwordUppercase.innerHTML = "";
+        $passwordDigit.innerHTML = "";
+
     }
 
 });
@@ -121,10 +128,18 @@ $confirmPassword.addEventListener("keyup", e => {
     
     e.preventDefault();
     $infoConfirmPassword.classList.add("info");
-    
-    $confirmPassword.value === $password.value ?
-    $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Mot de passe confirmé`:
-    $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Mot de passe non identique`;
+
+    if($confirmPassword.value){
+
+        $confirmPassword.value === $password.value ?
+        $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Mot de passe confirmé`:
+        $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Mot de passe non identique`;
+
+    } else {
+
+        $infoConfirmPassword.innerHTML = "";
+        
+    }
         
 });
 
