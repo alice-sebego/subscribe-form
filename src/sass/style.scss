@@ -86,6 +86,12 @@ button{
     background-color: $white-color;
     border: 1px solid $white-color;
     box-shadow: .1em .1em .15em $grey-primary-color;
+
+    &:hover{
+        color: $white-color;
+        background-color: $pink-secondary-color;
+        border: 1px solid $pink-secondary-color;
+    }
 }
 
 button > i{

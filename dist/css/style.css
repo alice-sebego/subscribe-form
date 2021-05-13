@@ -65,6 +65,10 @@ button {
   background-color: #fff;
   border: 1px solid #fff;
   box-shadow: 0.1em 0.1em 0.15em #333; }
+  button:hover {
+    color: #fff;
+    background-color: #e41b89;
+    border: 1px solid #e41b89; }
 
 button > i {
   pointer-events: none; }
