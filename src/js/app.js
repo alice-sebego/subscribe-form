@@ -19,6 +19,10 @@ const $showConfirmPassword = document.querySelector("#showConfirmPassword");
 
 const $infoUser = document.querySelector("#infoUser");
 const $infoMail = document.querySelector("#infoMail");
+const $passwordLength = document.querySelector("#password-length");
+const $passwordLowcase = document.querySelector("#password-lowcase");
+const $passwordUppercase = document.querySelector("#password-uppercase");
+const $passwordDigit = document.querySelector("#password-digit");
 
 // Handle Username
 $user.addEventListener("change", e => {
@@ -33,7 +37,7 @@ $user.addEventListener("change", e => {
 
         if($user.value.length > 3 && 
            $user.value.length <= 15 && 
-           regex.user.test($user.value) === true ){
+           regex.user.test($user.value)){
             
             $infoUser.classList.add("infoRight");
             $infoUser.innerHTML = `Votre pseudo <strong>${$user.value}</strong> est valide`;
@@ -60,7 +64,7 @@ $email.addEventListener("change", e => {
         $infoMail.classList.add("info");
         $mailFiel.appendChild($infoMail);
 
-        if(regex.email.test($email.value) === true){
+        if(regex.email.test($email.value)){
 
             $infoMail.classList.add("infoRight");
             $infoMail.innerHTML = `Votre e-mail <strong>${$email.value}</strong> est valide`;
@@ -79,40 +83,38 @@ $email.addEventListener("change", e => {
 });
 
 // Handle the first input of password's user
-$password.addEventListener("change", e => {
+$password.addEventListener("keyup", e => {
 
     e.preventDefault();
-    const $infoPassword = document.createElement("p");
-    $infoPassword.innerHTML = "";
 
     if($password.value){
 
-        $infoPassword.classList.add("info");
-        $passwordField.appendChild($infoPassword);
+        // Check password's length
+        regex.passwordLength.test($password.value) ? 
+        $passwordLength.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 8 caractères. ${$password.value.length} / 8` :
+        $passwordLength.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 8 caractères. ${$password.value.length} / 8` ; 
 
-        if($password.value.length > 1 && $password.value.length < 7){
-            
-            $infoPassword.innerHTML = `Mot de passe faible`;
-            util.removeElement($infoPassword);
+        // Check a lowcase's string presence in the password
+        regex.lowcasePresence.test($password.value) ?
+        $passwordLowcase.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 1 caractère en minuscule.`:
+        $passwordLowcase.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 1 caractère en minuscule.`;
 
-        } else if($password.value.length > 6 && $password.value.length < 10){
-            
-            $infoPassword.innerHTML = `Mot de passe moyen`;
-            util.removeElement($infoPassword);
+        // Check a uppercase's string presence in the password
+        regex.uppercasePresence.test($password.value) ?
+        $passwordUppercase.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 1 caractère en majuscule.`:
+        $passwordUppercase.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 1 caractère en majuscule.`;
+        
+        // Check a digit's presence in the password
+        regex.digitPresence.test($password.value) ?
+        $passwordDigit.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 1 chiffre.`:
+        $passwordDigit.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 1 chiffre.`;
 
-        } else if($password.value.length > 9 ){
-            
-            $infoPassword.innerHTML = `Mot de passe fort`;
-            util.removeElement($infoPassword);
-        }
     }
 
 });
 
-// https://www.gary-deshayes.com/fr/article/3-javascript-jquery-et-regex-securiser-un-mot-de-passe-en-temps-reel
-
 // Handle user's confirmation of his password input
-$confirmPassword.addEventListener("click", e => {
+$confirmPassword.addEventListener("keyup", e => {
     
     e.preventDefault();
 

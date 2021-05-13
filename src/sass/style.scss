@@ -75,6 +75,10 @@ input{
     color: $not-valid-info;
 }
 
+#check-password{
+    list-style-type: none;
+}
+
 button{
     padding: 0.3em;
     margin-top: 0.1em;
