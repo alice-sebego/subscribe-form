@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import * as util from './utils';
+import * as regex from './regex';
 
 
 // Elements of DOM
@@ -16,13 +17,8 @@ const $confirmPassWField = document.querySelector("#confirmPassWField");
 const $showPassword = document.querySelector("#showPassword");
 const $showConfirmPassword = document.querySelector("#showConfirmPassword");
 
-
 const $infoUser = document.querySelector("#infoUser");
 const $infoMail = document.querySelector("#infoMail");
-
-// Regex List
-const regexUser = /^[a-zA-Z\d\S]{3,15}$/;
-const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
 // Handle Username
 $user.addEventListener("change", e => {
@@ -37,7 +33,7 @@ $user.addEventListener("change", e => {
 
         if($user.value.length > 3 && 
            $user.value.length <= 15 && 
-           regexUser.test($user.value) === true ){
+           regex.user.test($user.value) === true ){
             
             $infoUser.classList.add("infoRight");
             $infoUser.innerHTML = `Votre pseudo <strong>${$user.value}</strong> est valide`;
@@ -64,7 +60,7 @@ $email.addEventListener("change", e => {
         $infoMail.classList.add("info");
         $mailFiel.appendChild($infoMail);
 
-        if(regexEmail.test($email.value) === true){
+        if(regex.email.test($email.value) === true){
 
             $infoMail.classList.add("infoRight");
             $infoMail.innerHTML = `Votre e-mail <strong>${$email.value}</strong> est valide`;
@@ -112,6 +108,8 @@ $password.addEventListener("change", e => {
     }
 
 });
+
+// https://www.gary-deshayes.com/fr/article/3-javascript-jquery-et-regex-securiser-un-mot-de-passe-en-temps-reel
 
 // Handle user's confirmation of his password input
 $confirmPassword.addEventListener("click", e => {
