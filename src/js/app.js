@@ -2,21 +2,19 @@ import _ from 'lodash';
 import * as util from './utils';
 import * as regex from './regex';
 
+/*  ----- ELEMENTS OF DOM ------ */
 
-// Elements of DOM
+// List of inputs
 let $user = document.querySelector("#user");
 let $email = document.querySelector("#email");
 let $password = document.querySelector("#password");
 let $confirmPassword = document.querySelector("#confirmPassword");
 
-const $userField = document.querySelector("#userField");
-const $mailFiel = document.querySelector("#mailField");
-const $passwordField = document.querySelector("#passwordField");
-const $confirmPassWField = document.querySelector("#confirmPassWField");
- 
+// Buttons which display password's inputs
 const $showPassword = document.querySelector("#showPassword");
 const $showConfirmPassword = document.querySelector("#showConfirmPassword");
 
+// Elements which display information's user of inputs
 const $infoUser = document.querySelector("#infoUser");
 const $infoMail = document.querySelector("#infoMail");
 const $checkPassword = document.querySelector("#check-password");
@@ -25,6 +23,8 @@ const $passwordLowcase = document.querySelector("#password-lowcase");
 const $passwordUppercase = document.querySelector("#password-uppercase");
 const $passwordDigit = document.querySelector("#password-digit");
 const $infoConfirmPassword = document.querySelector("#infoConfirm-password");
+
+/*  ----- HANDLE OF USER'S INPUTS ------ */
 
 // Handle Username
 $user.addEventListener("change", e => {
@@ -35,7 +35,6 @@ $user.addEventListener("change", e => {
     if($user.value){
 
         $infoUser.classList.add("info");
-        $userField.appendChild($infoUser);
 
         if($user.value.length > 3 && 
            $user.value.length <= 15 && 
@@ -64,7 +63,6 @@ $email.addEventListener("change", e => {
     if($email.value){
 
         $infoMail.classList.add("info");
-        $mailFiel.appendChild($infoMail);
 
         if(regex.email.test($email.value)){
 
@@ -138,7 +136,7 @@ $confirmPassword.addEventListener("keyup", e => {
     } else {
 
         $infoConfirmPassword.innerHTML = "";
-        
+
     }
         
 });
