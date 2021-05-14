@@ -16,4 +16,10 @@ const displayPassword = (inputPassword) => {
     inputPassword.type === "password" ? inputPassword.type = "text": inputPassword.type = "password";
 }
 
-export {removeElement, displayPassword};
+const removeContent = (content) => {
+    setTimeout(()=>{
+        content.innerHTML = "";
+    }, 1500);
+}
+
+export {removeElement, displayPassword, removeContent};

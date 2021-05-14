@@ -5,6 +5,7 @@ import * as regex from './regex';
 /*  ----- ELEMENTS OF DOM ------ */
 
 // List of inputs
+const $form = document.querySelector("form");  
 let $user = document.querySelector("#user");
 let $email = document.querySelector("#email");
 let $password = document.querySelector("#password");
@@ -23,6 +24,7 @@ const $passwordLowcase = document.querySelector("#password-lowcase");
 const $passwordUppercase = document.querySelector("#password-uppercase");
 const $passwordDigit = document.querySelector("#password-digit");
 const $infoConfirmPassword = document.querySelector("#infoConfirm-password");
+let $validation = document.querySelector("#validation");
 
 /*  ----- HANDLE OF USER'S INPUTS ------ */
 
@@ -36,9 +38,7 @@ $user.addEventListener("change", e => {
 
         $infoUser.classList.add("info");
 
-        if($user.value.length > 3 && 
-           $user.value.length <= 15 && 
-           regex.user.test($user.value)){
+        if(regex.user.test($user.value)){
             
             $infoUser.classList.add("infoRight");
             $infoUser.innerHTML = `Votre pseudo <strong>${$user.value}</strong> est valide`;
@@ -92,12 +92,12 @@ $password.addEventListener("keyup", e => {
 
         // Check password's length
         regex.passwordLength.test($password.value) ? 
-        $passwordLength.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 8 caractères. ${$password.value.length} / 8` :
-        $passwordLength.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 8 caractères. ${$password.value.length} / 8` ; 
+        $passwordLength.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 8 caractères. ${$password.value.length} / 8`: 
+        $passwordLength.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 8 caractères. ${$password.value.length} / 8`; 
 
         // Check a lowcase's string presence in the password
         regex.lowcasePresence.test($password.value) ?
-        $passwordLowcase.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 1 caractère en minuscule.`:
+        $passwordLowcase.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 1 caractère en minuscule.`: 
         $passwordLowcase.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 1 caractère en minuscule.`;
 
         // Check a uppercase's string presence in the password
@@ -107,7 +107,7 @@ $password.addEventListener("keyup", e => {
         
         // Check a digit's presence in the password
         regex.digitPresence.test($password.value) ?
-        $passwordDigit.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 1 chiffre.`:
+        $passwordDigit.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Au moins 1 chiffre.`: 
         $passwordDigit.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Au moins 1 chiffre.`;
 
     } else {
@@ -130,7 +130,7 @@ $confirmPassword.addEventListener("keyup", e => {
     if($confirmPassword.value){
 
         $confirmPassword.value === $password.value ?
-        $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Mot de passe confirmé`:
+        $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoRight"></i> Mot de passe confirmé`: 
         $infoConfirmPassword.innerHTML = `<i class="fas fa-check-circle infoWrong"></i> Mot de passe non identique`;
 
     } else {
@@ -148,4 +148,34 @@ $showPassword.addEventListener("click", () => {
 
 $showConfirmPassword.addEventListener("click", () => {
     util.displayPassword($confirmPassword);
+});
+
+// Undisabled submit button
+
+$form.addEventListener("submit", e =>{
+    
+    e.preventDefault();
+    
+    if( 
+        ! regex.user.test($user.value) &&
+        ! regex.email.test($email.value) && 
+        ! regex.passwordLength.test($password.value) &&
+        ! regex.lowcasePresence.test($password.value) &&
+        ! regex.uppercasePresence.test($password.value) &&
+        ! regex.digitPresence.test($password.value) &&
+        $password.value === ! $confirmPassword.value )
+        
+        {
+            console.log("Des inputs sont invalides");
+            $validation.innerHTML = `Certains valeurs sont invalides<br>Veuillez corriger vos données svp`;
+            //util.removeContent($validation);
+            
+        } else {
+            
+            console.log("Tout est ok");
+            $validation.innerHTML = `Vos données sont valides<br>Vous êtes inscrit(e)`;
+            //util.removeContent($validation);
+        }
+
+    
 });
