@@ -118,6 +118,11 @@ input[type="submit"]{
 
 }
 
+#validation{
+    text-align: center;
+    @extend %margin-top;
+}
+
 @media (max-width: 700px){
     #subscription{
         width: 55%;

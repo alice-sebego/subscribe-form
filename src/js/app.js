@@ -167,14 +167,16 @@ $form.addEventListener("submit", e =>{
         
         {
             console.log("Des inputs sont invalides");
+            $validation.classList.add("infoWrong");
             $validation.innerHTML = `Certains valeurs sont invalides<br>Veuillez corriger vos données svp`;
-            //util.removeContent($validation);
+            util.removeContent($validation);
             
         } else {
             
             console.log("Tout est ok");
+            $validation.classList.add("infoRight");
             $validation.innerHTML = `Vos données sont valides<br>Vous êtes inscrit(e)`;
-            //util.removeContent($validation);
+            util.removeContent($validation);
         }
 
     

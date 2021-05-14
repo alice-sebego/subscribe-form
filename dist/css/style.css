@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
-fieldset, input[type="submit"] {
+fieldset, input[type="submit"], #validation {
   margin-top: 1.8em; }
 
 *, ::before, ::after {
@@ -87,6 +87,9 @@ input[type="submit"] {
     color: #e41b89;
     border: 1px solid #e41b89;
     cursor: pointer; }
+
+#validation {
+  text-align: center; }
 
 @media (max-width: 700px) {
   #subscription {
