@@ -24,6 +24,7 @@ const $passwordLowcase = document.querySelector("#password-lowcase");
 const $passwordUppercase = document.querySelector("#password-uppercase");
 const $passwordDigit = document.querySelector("#password-digit");
 const $infoConfirmPassword = document.querySelector("#infoConfirm-password");
+const $checkAll = document.querySelector("#check-all");
 let $validation = document.querySelector("#validation");
 
 /*  ----- HANDLE OF USER'S INPUTS ------ */
@@ -152,7 +153,7 @@ $showConfirmPassword.addEventListener("click", () => {
 
 // Undisabled submit button
 
-$form.addEventListener("submit", e =>{
+$checkAll.addEventListener("click", e =>{
     
     e.preventDefault();
     
@@ -172,7 +173,7 @@ $form.addEventListener("submit", e =>{
             util.removeContent($validation);
             
         } else {
-            
+
             console.log("Tout est ok");
             $validation.classList.add("infoRight");
             $validation.innerHTML = `Vos données sont valides<br>Vous êtes inscrit(e)`;

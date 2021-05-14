@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
-fieldset, input[type="submit"], #validation {
+fieldset, input[type="submit"], input[type="button"], #validation {
   margin-top: 1.8em; }
 
 *, ::before, ::after {
@@ -72,6 +72,15 @@ button {
 
 button > i {
   pointer-events: none; }
+
+input[type="button"] {
+  background-color: #fff;
+  color: #e41b89;
+  border: 1px solid #e41b89; }
+  input[type="button"]:hover {
+    background-color: #e41b89;
+    border: none;
+    color: #fff; }
 
 input[type="submit"] {
   background-color: #e41b89;
