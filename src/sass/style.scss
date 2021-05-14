@@ -98,20 +98,6 @@ button > i{
     pointer-events: none;
 }
 
-input[type="button"]{
-
-    background-color: $white-color;
-    color: $pink-secondary-color;
-    border: 1px solid $pink-secondary-color;
-    @extend %margin-top;
-
-    &:hover{
-        background-color: $pink-secondary-color;
-        border: none;
-        color: $white-color;
-    }
-}
-
 input[type="submit"]{
 
     background-color: $pink-secondary-color;
@@ -132,10 +118,6 @@ input[type="submit"]{
 
 }
 
-#validation{
-    text-align: center;
-    @extend %margin-top;
-}
 
 @media (max-width: 700px){
     #subscription{

@@ -5,7 +5,6 @@ import * as regex from './regex';
 /*  ----- ELEMENTS OF DOM ------ */
 
 // List of inputs
-const $form = document.querySelector("form");  
 let $user = document.querySelector("#user");
 let $email = document.querySelector("#email");
 let $password = document.querySelector("#password");
@@ -24,8 +23,6 @@ const $passwordLowcase = document.querySelector("#password-lowcase");
 const $passwordUppercase = document.querySelector("#password-uppercase");
 const $passwordDigit = document.querySelector("#password-digit");
 const $infoConfirmPassword = document.querySelector("#infoConfirm-password");
-const $checkAll = document.querySelector("#check-all");
-let $validation = document.querySelector("#validation");
 
 /*  ----- HANDLE OF USER'S INPUTS ------ */
 
@@ -149,36 +146,4 @@ $showPassword.addEventListener("click", () => {
 
 $showConfirmPassword.addEventListener("click", () => {
     util.displayPassword($confirmPassword);
-});
-
-// Undisabled submit button
-
-$checkAll.addEventListener("click", e =>{
-    
-    e.preventDefault();
-    
-    if( 
-        ! regex.user.test($user.value) &&
-        ! regex.email.test($email.value) && 
-        ! regex.passwordLength.test($password.value) &&
-        ! regex.lowcasePresence.test($password.value) &&
-        ! regex.uppercasePresence.test($password.value) &&
-        ! regex.digitPresence.test($password.value) &&
-        $password.value === ! $confirmPassword.value )
-        
-        {
-            console.log("Des inputs sont invalides");
-            $validation.classList.add("infoWrong");
-            $validation.innerHTML = `Certains valeurs sont invalides<br>Veuillez corriger vos données svp`;
-            util.removeContent($validation);
-            
-        } else {
-
-            console.log("Tout est ok");
-            $validation.classList.add("infoRight");
-            $validation.innerHTML = `Vos données sont valides<br>Vous êtes inscrit(e)`;
-            util.removeContent($validation);
-        }
-
-    
 });
