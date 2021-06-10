@@ -18,22 +18,21 @@
     </header>
     <section id="subscription">
         <h2>Inscrivez-vous</h2>
-        <form action="">
-            
+        <form>
             <fieldset id="userField">
-                <label for="user">Nom d'utilisateur</label>
-                <input type="text" name="user" id="user" placeholder="Votre pseudo" required>
+                <label for="user">Nom d'utilisateur *</label>
+                <input type="text" name="user" id="user" placeholder="Votre pseudo" autocomplete="username" aria-describedby="infoUser" enterkeyhint="next" autofocus required>
                 <p id="infoUser"></p>
             </fieldset>
             
             <fieldset id="mailField">
-                <label for="email">Entrez votre adresse e-mail</label>
-                <input type="email" name="email" id="email" placeholder="Votre adresse e-mail" required>
+                <label for="email">Entrez votre adresse e-mail *</label>
+                <input type="email" name="email" id="email" placeholder="Votre adresse e-mail" autocomplete="email" aria-describedby="infoMail" enterkeyhint="next" required>
                 <p id="infoMail"></p>
             </fieldset>
             
             <fieldset id="passwordField">
-                <label for="password">Créez votre mot de passe<input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
+                <label for="password">Créez votre mot de passe *<input type="password" name="password" id="password" placeholder="Votre mot de passe" aria-describedby="check-password" enterkeyhint="next" required>
                 <button type="button" id="showPassword"><i class="fas fa-eye"></i></button>
                 </label>
                 <ul id="check-password">
@@ -45,7 +44,7 @@
             </fieldset>
             
             <fieldset id="confirmPassWField">
-                <label for="confirmPassword">Confirmez votre mot de passe <input type="password" name="password" id="confirmPassword" placeholder="Confirmez votre mot de passe" required></label>
+                <label for="confirmPassword">Confirmez votre mot de passe *<input type="password" name="password" id="confirmPassword" placeholder="Confirmez votre mot de passe" aria-describedby="infoConfirm-password" enterkeyhint="done" required></label>
                 <button type="button" id="showConfirmPassword"><i class="fas fa-eye"></i></button> 
                 <p id="infoConfirm-password"></p>
             </fieldset>
