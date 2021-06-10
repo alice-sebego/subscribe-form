@@ -131,6 +131,9 @@ input[type="submit"]{
     #subscription{
         width: 55%;
     }
+    input[type="submit"]{
+        font-size: .9em;
+    }
 }
 
 @media (max-width: 500px){
